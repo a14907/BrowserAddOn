@@ -15,6 +15,7 @@ if (window.location.host == 'devblogs.microsoft.com') {
 
 if (window.location.host == 'learn.microsoft.com') {
     document.querySelectorAll('#left-container').forEach(m=>m.classList.add('notranslate'))
+    document.querySelectorAll('table').forEach(m=>m.classList.add('notranslate'))
 }
 
 if (window.location.host == 'tieba.baidu.com') {
