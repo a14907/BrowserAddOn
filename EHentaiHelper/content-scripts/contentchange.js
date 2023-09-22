@@ -24,25 +24,3 @@ if (window.location.host == 'www.juxiaoshuo.net') {
     document.querySelectorAll('.footer_wap').forEach(m => m.style.display = 'none')
     document.body.style.backgroundImage = ''
 }
-
-if (window.location.host == 'tieba.baidu.com') {
-    setTimeout(function () {
-        document.querySelectorAll('.userbar').forEach(m => m.style.visibility = 'hidden')
-        document.querySelector("body > ul").hidden = true
-        document.querySelector("#spage-tbshare-container").hidden = true
-    }, 1000)
-
-    document.querySelectorAll('.search-sec').forEach(m => m.style.visibility = 'hidden')
-    document.querySelectorAll('.top-sec').forEach(m => m.style.visibility = 'hidden')
-    document.querySelectorAll('.left-sec').forEach(m => m.style.visibility = 'hidden')
-    document.querySelectorAll('.r-top-sec').forEach(m => m.style.visibility = 'hidden')
-    document.querySelectorAll('.r-right-sec').forEach(m => m.style.visibility = 'hidden')
-
-
-    document.querySelectorAll('#head').forEach(m => m.style.visibility = 'hidden')
-    document.querySelectorAll('.right_section').forEach(m => m.style.visibility = 'hidden')
-    document.querySelectorAll('.card_top_wrap').forEach(m => m.style.visibility = 'hidden')
-    document.querySelectorAll('.nav_wrap').forEach(m => m.style.visibility = 'hidden')
-    document.querySelectorAll('.p_author_face').forEach(m => m.style.visibility = 'hidden')
-
-}
