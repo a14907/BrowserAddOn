@@ -50,7 +50,7 @@ document.getElementById("downloadClose").onclick=function () {
 }
 
 document.getElementById("onlyShowComment").onclick=function () {
-    chrome.tabs.query({ url:'https://www.bilibili.com/video/*', active: true }, function(tabs) {
+    chrome.tabs.query({ url:'https://www.bilibili.com/video/*'}, function(tabs) {
         tabs.forEach(tab => {
             chrome.tabs.sendMessage(
                 tab.id,
