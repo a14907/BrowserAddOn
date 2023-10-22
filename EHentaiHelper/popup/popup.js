@@ -50,7 +50,7 @@ document.getElementById("downloadClose").onclick=function () {
 }
 
 document.getElementById("onlyShowComment").onclick=function () {
-    chrome.tabs.query({ url:'https://www.bilibili.com/video/*'}, function(tabs) {
+    chrome.tabs.query({ url:'https://www.bilibili.com/video/*', active: true }, function(tabs) {
         tabs.forEach(tab => {
             chrome.tabs.sendMessage(
                 tab.id,
@@ -67,7 +67,7 @@ document.getElementById("onlyShowComment").onclick=function () {
 }
 
 document.getElementById("nhentaiDownload").onclick=function () {
-    chrome.tabs.query({ url:'https://nhentai.net/g/*', active: true }, function(tabs) {
+    chrome.tabs.query({ url:'https://nhentai.net/g/*' }, function(tabs) {
         tabs.forEach(tab => {
             chrome.tabs.sendMessage(
                 tab.id,
