@@ -65,3 +65,20 @@ document.getElementById("onlyShowComment").onclick=function () {
         
     });
 }
+
+document.getElementById("nhentaiDownload").onclick=function () {
+    chrome.tabs.query({ url:'https://nhentai.net/g/*', active: true }, function(tabs) {
+        tabs.forEach(tab => {
+            chrome.tabs.sendMessage(
+                tab.id,
+                {
+                    type: 'nhentaiDownload'
+                },
+                function(response) {
+                    window.close();
+                }
+            ); 
+        });
+        
+    });
+}
