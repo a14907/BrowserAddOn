@@ -20,6 +20,7 @@
         {
             "matches": [
                 "https://e-hentai.org/*",
+                "https://nhentai.net/g/*",
                 "https://www.bilibili.com/video/*"
             ],
             "js": [

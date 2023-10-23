@@ -13,8 +13,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
             console.log('bt文件数量等于0，不继续处理：' + num)
         }
 
-    } 
-    
+    }
+
     else if (request.type == "downloadPage" && window.location.href.startsWith('https://e-hentai.org/gallerytorrents.php')) {
 
         console.log('收到处理下载页的命令')
@@ -30,14 +30,22 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
             console.log('存在可下载的bt')
         }
 
-    } 
-    
+    }
+
+    else if (request.type == "nhentaiDownload" && window.location.href.startsWith('https://nhentai.net/g/')) {
+
+        console.log('收到处理下载页的命令')
+        document.querySelector("#download").click()
+        console.log('下载')
+
+    }
+
     else if (request.type == "downloadPageClose" && window.location.href.startsWith('https://e-hentai.org/gallerytorrents.php')) {
 
         console.log('收到处理下载页关闭的命令')
         window.close()
     }
-    
+
     else if (request.type == "onlyShowComment" && window.location.href.startsWith('https://www.bilibili.com/video')) {
 
         console.log('收到处理只显示评论区的命令')
