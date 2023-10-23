@@ -48,15 +48,14 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
     else if (request.type == "onlyShowComment" && window.location.href.startsWith('https://www.bilibili.com/video')) {
 
-        console.log('收到处理只显示评论区的命令')
-        //删除头部
-        document.querySelector("#biliMainHeader").remove()
+        console.log('收到处理只显示评论区的命令') 
         //删除视频区
         document.querySelector("#playerWrap").remove()
+        document.querySelector("#biliMainHeader").remove()
         //删除广告区
-        document.querySelector("#bannerAd").remove()
-        //删除右侧
-        document.querySelector("#app > div > div.right-container").remove()
+        document.querySelector("#activity_vote").remove()
+        //删除右侧 
+        document.querySelector("#app > div > div.right-container.is-in-large-ab").remove()
     }
 
     sendResponse({ fromcontent: "This message is from content.js" });
