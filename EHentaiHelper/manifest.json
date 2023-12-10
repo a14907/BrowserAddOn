@@ -19,8 +19,8 @@
     "content_scripts": [
         {
             "matches": [
-                "https://e-hentai.org/*",
-                "https://nhentai.net/g/*",
+                "https://e-hentai.org/*", 
+                "https://www.sehuatang.net/thread-*",
                 "https://www.bilibili.com/video/*"
             ],
             "js": [

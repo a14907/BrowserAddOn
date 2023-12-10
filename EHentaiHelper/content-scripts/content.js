@@ -32,13 +32,20 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
     }
 
-    else if (request.type == "nhentaiDownload" && window.location.href.startsWith('https://nhentai.net/g/')) {
+    else if (request.type == "downloadSehuatang" && window.location.href.startsWith('https://www.sehuatang.net/thread-')) {
 
         console.log('收到处理下载页的命令')
-        document.querySelector("#download").click()
-        console.log('下载')
+
+        var arr=[];
+        document.querySelectorAll(".pcb .t_fsz a").forEach(m=>{
+            if (m.getAttribute('target')=="_blank" && !m.href.endsWith('jpg')) {
+                m.click()
+            }
+        })
+
 
     }
+    
 
     else if (request.type == "downloadPageClose" && window.location.href.startsWith('https://e-hentai.org/gallerytorrents.php')) {
 

@@ -64,15 +64,16 @@ document.getElementById("onlyShowComment").onclick=function () {
         });
         
     });
-}
+} 
 
-document.getElementById("nhentaiDownload").onclick=function () {
-    chrome.tabs.query({ url:'https://nhentai.net/g/*' }, function(tabs) {
+
+document.getElementById("downloadSehuatang").onclick=function () {
+    chrome.tabs.query({ url:'https://www.sehuatang.net/thread-*' }, function(tabs) {
         tabs.forEach(tab => {
             chrome.tabs.sendMessage(
                 tab.id,
                 {
-                    type: 'nhentaiDownload'
+                    type: 'downloadSehuatang'
                 },
                 function(response) {
                     window.close();
