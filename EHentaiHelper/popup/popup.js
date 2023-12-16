@@ -83,3 +83,21 @@ document.getElementById("downloadSehuatang").onclick=function () {
         
     });
 }
+
+
+document.getElementById("download2048").onclick=function () {
+    chrome.tabs.query({ url:'https://bt.qj8q2.com/2048/state/p*' }, function(tabs) {
+        tabs.forEach(tab => {
+            chrome.tabs.sendMessage(
+                tab.id,
+                {
+                    type: 'download2048'
+                },
+                function(response) {
+                    window.close();
+                }
+            ); 
+        });
+        
+    });
+}

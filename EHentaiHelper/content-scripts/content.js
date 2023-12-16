@@ -35,9 +35,21 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     else if (request.type == "downloadSehuatang" && window.location.href.startsWith('https://www.sehuatang.net/thread-')) {
 
         console.log('收到处理下载页的命令')
-
-        var arr=[];
+ 
         document.querySelectorAll(".pcb .t_fsz a").forEach(m=>{
+            if (m.getAttribute('target')=="_blank" && !m.href.endsWith('jpg')) {
+                m.click()
+            }
+        })
+
+
+    }
+
+    else if (request.type == "download2048" && window.location.href.startsWith('https://bt.qj8q2.com/2048/state/p')) {
+
+        console.log('收到处理下载页的命令')
+ 
+        document.querySelectorAll("#main > div.t5 > table > tbody > tr.tr1.r_one > th >div >a").forEach(m=>{
             if (m.getAttribute('target')=="_blank" && !m.href.endsWith('jpg')) {
                 m.click()
             }
