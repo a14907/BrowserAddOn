@@ -21,7 +21,8 @@
             "matches": [
                 "https://e-hentai.org/*", 
                 "https://www.sehuatang.net/thread-*",
-                "https://www.bilibili.com/video/*"
+                "https://www.bilibili.com/video/*",
+                "https://bt.qj8q2.com/2048/state/p*"
             ],
             "js": [
                 "content-scripts/content.js"
