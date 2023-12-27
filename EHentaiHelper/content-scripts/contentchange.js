@@ -23,6 +23,10 @@ if (window.location.host == 'www.bookstack.cn') {
     document.querySelectorAll("ul.markdown-toc-list").forEach(m => m.classList.add('notranslate'))
 }
 
+if (window.location.host == 'fsharpforfunandprofit.com') {
+    document.querySelectorAll(".gdoc-nav").forEach(m => m.classList.add('notranslate'))
+}
+
 if (window.location.host == 'www.juxiaoshuo.net') {
     document.querySelectorAll('.header_wap').forEach(m => m.style.display = 'none')
     document.querySelectorAll('.Readbtn').forEach(m => m.style.display = 'none')
