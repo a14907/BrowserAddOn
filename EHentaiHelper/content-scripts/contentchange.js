@@ -25,6 +25,7 @@ if (window.location.host == 'www.bookstack.cn') {
 
 if (window.location.host == 'fsharpforfunandprofit.com') {
     document.querySelectorAll(".gdoc-nav").forEach(m => m.classList.add('notranslate'))
+    document.querySelectorAll("h1").forEach(m => m.classList.add('notranslate'))
 }
 
 if (window.location.host == 'www.juxiaoshuo.net') {
