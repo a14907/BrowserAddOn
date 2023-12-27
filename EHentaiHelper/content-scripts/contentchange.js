@@ -20,6 +20,7 @@ if (window.location.host == 'learn.microsoft.com') {
 
 if (window.location.host == 'www.bookstack.cn') {
     document.querySelectorAll("div.article-menu").forEach(m => m.classList.add('notranslate'))
+    document.querySelectorAll("ul.markdown-toc-list").forEach(m => m.classList.add('notranslate'))
 }
 
 if (window.location.host == 'www.juxiaoshuo.net') {
