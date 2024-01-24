@@ -68,7 +68,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         //     }
         // }) 
         var old = localStorage.getItem('str');
-        localStorage.setItem('str',old+'\n\n标题：'+document.title+'\n\n'+document.body.innerText +'\n文章结束')
+        localStorage.setItem('str',old+'\n\n标题：'+document.title+'\n\n'+document.body.innerText +'\n\n文章结束')
 
     }
     
