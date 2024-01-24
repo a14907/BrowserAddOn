@@ -101,3 +101,21 @@ document.getElementById("download2048").onclick=function () {
         
     });
 }
+
+
+document.getElementById("downloadnotion").onclick=function () {
+    chrome.tabs.query({ url:'https://www.notion.so/*' }, function(tabs) {
+        tabs.forEach(tab => {
+            chrome.tabs.sendMessage(
+                tab.id,
+                {
+                    type: 'downloadnotion'
+                },
+                function(response) {
+                    window.close();
+                }
+            ); 
+        });
+        
+    });
+}

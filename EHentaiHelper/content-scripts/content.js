@@ -57,6 +57,20 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
 
     }
+
+    else if (request.type == "downloadnotion" && window.location.href.startsWith('https://www.notion.so/')) {
+
+        console.log('收到处理下载页的命令')
+ 
+        // document.querySelectorAll("#main > div.t5 > table > tbody > tr.tr1.r_one > th >div >a").forEach(m=>{
+        //     if (m.getAttribute('target')=="_blank" && !m.href.endsWith('jpg')) {
+        //         m.click()
+        //     }
+        // }) 
+        var old = localStorage.getItem('str');
+        localStorage.setItem('str',old+'\n\n标题：'+document.title+'\n\n'+document.body.innerText +'\n文章结束')
+
+    }
     
 
     else if (request.type == "downloadPageClose" && window.location.href.startsWith('https://e-hentai.org/gallerytorrents.php')) {
