@@ -67,8 +67,22 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         //         m.click()
         //     }
         // }) 
-        var old = localStorage.getItem('str');
-        localStorage.setItem('str',old+'\n\n标题：'+document.title+'\n\n'+document.body.innerText +'\n\n文章结束')
+        var content='\n\n标题：'+document.title+'\n\n'+document.body.innerText +'\n\n文章结束'; 
+
+        var filename = document.title+'.txt'; 
+    
+        var pom = document.createElement('a');
+        pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+        pom.setAttribute('download', filename);
+    
+        if (document.createEvent) {
+            var event = document.createEvent('MouseEvents');
+            event.initEvent('click', true, true);
+            pom.dispatchEvent(event);
+        }
+        else {
+            pom.click();
+        }
 
     }
     
@@ -93,3 +107,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
     sendResponse({ fromcontent: "This message is from content.js" });
 });
+
+ 
+  
