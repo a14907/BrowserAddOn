@@ -18,6 +18,16 @@ if (window.location.host == 'learn.microsoft.com') {
     document.querySelectorAll('table').forEach(m => m.classList.add('notranslate'))
 }
 
+if (window.location.host == 'www.bookstack.cn') {
+    document.querySelectorAll("div.article-menu").forEach(m => m.classList.add('notranslate'))
+    document.querySelectorAll("ul.markdown-toc-list").forEach(m => m.classList.add('notranslate'))
+}
+
+if (window.location.host == 'fsharpforfunandprofit.com') {
+    document.querySelectorAll(".gdoc-nav").forEach(m => m.classList.add('notranslate'))
+    document.querySelectorAll(".gdoc-post__header").forEach(m => m.classList.add('notranslate'))
+}
+
 if (window.location.host == 'www.juxiaoshuo.net') {
     document.querySelectorAll('.header_wap').forEach(m => m.style.display = 'none')
     document.querySelectorAll('.Readbtn').forEach(m => m.style.display = 'none')

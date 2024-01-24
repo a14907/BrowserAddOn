@@ -35,7 +35,8 @@
                 "https://endjin.com/*",
                 "https://devblogs.microsoft.com/*",
                 "https://www.juxiaoshuo.net/*",
-                "https://learn.microsoft.com/*"
+                "https://learn.microsoft.com/*",
+                "https://www.bookstack.cn/*"
             ],
             "js": [
                 "content-scripts/contentchange.js"
