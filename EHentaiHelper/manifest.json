@@ -11,7 +11,8 @@
     },
     "permissions": [
         "tabs",
-        "declarativeNetRequest"
+        "declarativeNetRequest",
+        "proxy"
     ],
     "background": {
         "service_worker": "service-worker.js"
