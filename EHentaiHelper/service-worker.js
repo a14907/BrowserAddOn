@@ -46,5 +46,6 @@ chrome.runtime.onInstalled.addListener(() => {
     //     function() {}
     //   );
 
+    //chrome.proxy.settings.clear({scope:'regular'},()=>console.log('Proxy Removed'));
 
 })
