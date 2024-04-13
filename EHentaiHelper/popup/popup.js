@@ -119,3 +119,21 @@ document.getElementById("downloadnotion").onclick=function () {
         
     });
 }
+
+
+document.getElementById("downloadGenRssForwhentai").onclick=function () {
+    chrome.tabs.query({ url:'https://e-hentai.org/*' }, function(tabs) {
+        tabs.forEach(tab => {
+            chrome.tabs.sendMessage(
+                tab.id,
+                {
+                    type: 'downloadGenRssForwhentai'
+                },
+                function(response) {
+                    window.close();
+                }
+            ); 
+        });
+        
+    });
+}

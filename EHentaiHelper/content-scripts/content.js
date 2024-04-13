@@ -35,9 +35,9 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     else if (request.type == "downloadSehuatang" && window.location.href.startsWith('https://www.sehuatang.net/thread-')) {
 
         console.log('收到处理下载页的命令')
- 
-        document.querySelectorAll(".pcb .t_fsz a").forEach(m=>{
-            if (m.getAttribute('target')=="_blank" && !m.href.endsWith('jpg')) {
+
+        document.querySelectorAll(".pcb .t_fsz a").forEach(m => {
+            if (m.getAttribute('target') == "_blank" && !m.href.endsWith('jpg')) {
                 m.click()
             }
         })
@@ -48,9 +48,9 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     else if (request.type == "download2048" && window.location.href.startsWith('https://bt.qj8q2.com/2048/state/p')) {
 
         console.log('收到处理下载页的命令')
- 
-        document.querySelectorAll("#main > div.t5 > table > tbody > tr.tr1.r_one > th >div >a").forEach(m=>{
-            if (m.getAttribute('target')=="_blank" && !m.href.endsWith('jpg')) {
+
+        document.querySelectorAll("#main > div.t5 > table > tbody > tr.tr1.r_one > th >div >a").forEach(m => {
+            if (m.getAttribute('target') == "_blank" && !m.href.endsWith('jpg')) {
                 m.click()
             }
         })
@@ -61,20 +61,20 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     else if (request.type == "downloadnotion" && window.location.href.startsWith('https://www.notion.so/')) {
 
         console.log('收到处理下载页的命令')
- 
+
         // document.querySelectorAll("#main > div.t5 > table > tbody > tr.tr1.r_one > th >div >a").forEach(m=>{
         //     if (m.getAttribute('target')=="_blank" && !m.href.endsWith('jpg')) {
         //         m.click()
         //     }
         // }) 
-        var content='\n\n标题：'+document.title+'\n\n'+document.body.innerText +'\n\n文章结束'; 
+        var content = '\n\n标题：' + document.title + '\n\n' + document.body.innerText + '\n\n文章结束';
 
-        var filename = document.title+'.txt'; 
-    
+        var filename = document.title + '.txt';
+
         var pom = document.createElement('a');
         pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
         pom.setAttribute('download', filename);
-    
+
         if (document.createEvent) {
             var event = document.createEvent('MouseEvents');
             event.initEvent('click', true, true);
@@ -85,7 +85,35 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         }
 
     }
-    
+
+    else if (request.type == "downloadGenRssForwhentai" && window.location.href.startsWith('https://e-hentai.org')) {
+
+        console.log('收到处理下载页的命令')
+
+        var str = '';
+        var arr = document.querySelectorAll("body > div.ido > div:nth-child(2) > div.itg.gld > div > div.gl3t > a");
+        for (let index = 0; index < arr.length; index++) {
+            const element = arr[index];
+            str += `<entry><title>${element.querySelector('img').alt}</title><link rel="alternate" href="${element.href}" /><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><img src="${element.querySelector('img').src}" /></div></content></entry>\n`;
+        }
+
+        var filename = new Date().getTime() + '.txt';
+
+        var pom = document.createElement('a');
+        pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(str));
+        pom.setAttribute('download', filename);
+
+        if (document.createEvent) {
+            var event = document.createEvent('MouseEvents');
+            event.initEvent('click', true, true);
+            pom.dispatchEvent(event);
+        }
+        else {
+            pom.click();
+        }
+
+    }
+
 
     else if (request.type == "downloadPageClose" && window.location.href.startsWith('https://e-hentai.org/gallerytorrents.php')) {
 
@@ -95,7 +123,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
     else if (request.type == "onlyShowComment" && window.location.href.startsWith('https://www.bilibili.com/video')) {
 
-        console.log('收到处理只显示评论区的命令') 
+        console.log('收到处理只显示评论区的命令')
         //删除视频区
         document.querySelector("#playerWrap").remove()
         document.querySelector("#biliMainHeader").remove()
@@ -108,5 +136,4 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     sendResponse({ fromcontent: "This message is from content.js" });
 });
 
- 
-  
+
