@@ -7,6 +7,7 @@ if (window.location.host == 'www.newtonsoft.com') {
 if (window.location.host == 'codeblog.jonskeet.uk') { 
     document.querySelectorAll('#secondary').forEach(m => m.classList.add('notranslate')) 
     document.querySelectorAll('#jp-post-flair').forEach(m => m.classList.add('notranslate')) 
+    document.querySelectorAll('#target > div').forEach(m => m.classList.add('notranslate')) 
 }
 
 if (window.location.host == 'endjin.com') {
