@@ -137,3 +137,18 @@ document.getElementById("downloadGenRssForwhentai").onclick=function () {
         
     });
 }
+
+
+document.getElementById("downloadGetTabsTitle").onclick=function () {
+    chrome.tabs.query({ }, function(tabs) {
+
+        var data='';
+        tabs.map(tab=>{
+            data+=`${tab.title}\n`;
+        })
+        var clip = navigator.clipboard;
+        clip.writeText(data)
+
+        window.close();
+    });
+}
